@@ -1,15 +1,15 @@
 //
-//  MainViewController.swift
+//  FavoriteViewController.swift
 //  Motivate Me CP
 //
-//  Created by Kazutaka Homma on 4/30/19.
+//  Created by Joy_Wang on 5/7/19.
 //  Copyright © 2019 Kazutaka Homma. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-   
+class FavoriteViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

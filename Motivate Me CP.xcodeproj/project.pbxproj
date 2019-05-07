@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38B1A67A228158F8001E0F64 /* HomeListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */; };
+		38DF9C4822821D6B00B130B6 /* QuoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */; };
+		38DF9C4A22823BAB00B130B6 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF9C4922823BAB00B130B6 /* FavoriteViewController.swift */; };
+		38DF9C4C2282494D00B130B6 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF9C4B2282494D00B130B6 /* FavoriteCell.swift */; };
 		D7E00228227969ED0022A3B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E00227227969ED0022A3B5 /* AppDelegate.swift */; };
 		D7E00230227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E0022E227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld */; };
 		D7E00232227969F10022A3B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E00231227969F10022A3B5 /* Assets.xcassets */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewViewController.swift; sourceTree = "<group>"; };
+		38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListCell.swift; sourceTree = "<group>"; };
+		38DF9C4922823BAB00B130B6 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		38DF9C4B2282494D00B130B6 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		D7E00224227969ED0022A3B5 /* Motivate Me CP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Motivate Me CP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E00227227969ED0022A3B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E0022F227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Motivate_Me_CP.xcdatamodel; sourceTree = "<group>"; };
@@ -110,6 +118,10 @@
 				D7E00233227969F10022A3B5 /* LaunchScreen.storyboard */,
 				D7E00236227969F10022A3B5 /* Info.plist */,
 				D7E0022E227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld */,
+				38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */,
+				38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */,
+				38DF9C4922823BAB00B130B6 /* FavoriteViewController.swift */,
+				38DF9C4B2282494D00B130B6 /* FavoriteCell.swift */,
 			);
 			path = "Motivate Me CP";
 			sourceTree = "<group>";
@@ -285,6 +297,10 @@
 			files = (
 				D7E00269227974DE0022A3B5 /* MainViewController.swift in Sources */,
 				D7E00228227969ED0022A3B5 /* AppDelegate.swift in Sources */,
+				38DF9C4822821D6B00B130B6 /* QuoteListCell.swift in Sources */,
+				38DF9C4A22823BAB00B130B6 /* FavoriteViewController.swift in Sources */,
+				38B1A67A228158F8001E0F64 /* HomeListViewViewController.swift in Sources */,
+				38DF9C4C2282494D00B130B6 /* FavoriteCell.swift in Sources */,
 				D7E00230227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld in Sources */,
 				D7E0026B227974F70022A3B5 /* HomeViewController.swift in Sources */,
 			);
