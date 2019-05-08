@@ -10,6 +10,9 @@ import UIKit
 
 class FavoriteCell: UITableViewCell {
 
+    @IBOutlet weak var FavoriteQuoteLabel: UILabel!
+    @IBOutlet weak var FavoriteAuthorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
