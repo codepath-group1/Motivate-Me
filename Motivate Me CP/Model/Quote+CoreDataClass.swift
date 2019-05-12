@@ -29,9 +29,10 @@ public class Quote: NSManagedObject, Decodable {
         }
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        guard let id = try container.decodeIfPresent(Int64.self,     forKey: .id),
-              let text   = try container.decodeIfPresent(String.self,    forKey: .text),
-              let topic  = try container.decodeIfPresent(String.self,    forKey: .topic) else {
+        guard let id    = try container.decodeIfPresent(String.self, forKey: .id),
+              let text  = try container.decodeIfPresent(String.self, forKey: .text),
+              let topic = try container.decodeIfPresent(String.self, forKey: .topic),
+              let idInt64 = Int64(id) else {
                 fatalError("Failed to decode Quote")
         }
         
@@ -44,7 +45,7 @@ public class Quote: NSManagedObject, Decodable {
         for tagString in tagsAsString {
             tags.append(Tag(moc: managedObjectContext, title: tagString))
         }
-        self.id     = id
+        self.id     = idInt64
         self.text   = text
         self.topic  = topic
         self.source = source
