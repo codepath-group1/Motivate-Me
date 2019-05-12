@@ -19,6 +19,10 @@
 		D7247078227C13B500B715CA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247077227C13B500B715CA /* ProfileViewController.swift */; };
 		D724707A227C13C200B715CA /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247079227C13C200B715CA /* FavoriteViewController.swift */; };
 		D724707C227C14DA00B715CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724707B227C14DA00B715CA /* LoginViewController.swift */; };
+		D724707F22850D7300B715CA /* QuoteData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724707D22850D7300B715CA /* QuoteData+CoreDataClass.swift */; };
+		D724708022850D7300B715CA /* QuoteData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724707E22850D7300B715CA /* QuoteData+CoreDataProperties.swift */; };
+		D72470822285118900B715CA /* englishQuotes.json in Resources */ = {isa = PBXBuildFile; fileRef = D72470812285118800B715CA /* englishQuotes.json */; };
+		D724708422851FB100B715CA /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724708322851FB000B715CA /* FavoriteCell.swift */; };
 		D7E00228227969ED0022A3B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E00227227969ED0022A3B5 /* AppDelegate.swift */; };
 		D7E00230227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E0022E227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld */; };
 		D7E00232227969F10022A3B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E00231227969F10022A3B5 /* Assets.xcassets */; };
@@ -61,6 +65,10 @@
 		D7247077227C13B500B715CA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Motivate Me CP/ViewController/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D7247079227C13C200B715CA /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteViewController.swift; path = "Motivate Me CP/ViewController/FavoriteViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D724707B227C14DA00B715CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Motivate Me CP/ViewController/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		D724707D22850D7300B715CA /* QuoteData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D724707E22850D7300B715CA /* QuoteData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuoteData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D72470812285118800B715CA /* englishQuotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = englishQuotes.json; sourceTree = "<group>"; };
+		D724708322851FB000B715CA /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		D7E00224227969ED0022A3B5 /* Motivate Me CP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Motivate Me CP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E00227227969ED0022A3B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E0022F227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Motivate_Me_CP.xcdatamodel; sourceTree = "<group>"; };
@@ -107,6 +115,8 @@
 		D7247062227BCA7A00B715CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D724707D22850D7300B715CA /* QuoteData+CoreDataClass.swift */,
+				D724707E22850D7300B715CA /* QuoteData+CoreDataProperties.swift */,
 				D7247065227BDB5900B715CA /* Tag+CoreDataClass.swift */,
 				D7247066227BDB5900B715CA /* Tag+CoreDataProperties.swift */,
 				D7247067227BDB5900B715CA /* Source+CoreDataClass.swift */,
@@ -140,6 +150,7 @@
 		D7E00226227969ED0022A3B5 /* Motivate Me CP */ = {
 			isa = PBXGroup;
 			children = (
+				D724708322851FB000B715CA /* FavoriteCell.swift */,
 				D7247071227BDCD500B715CA /* CodingUserInfoKey+.swift */,
 				D7247062227BCA7A00B715CA /* Model */,
 				D7E00227227969ED0022A3B5 /* AppDelegate.swift */,
@@ -147,6 +158,7 @@
 				D7E0025A227972BA0022A3B5 /* Storyboard */,
 				D7E00231227969F10022A3B5 /* Assets.xcassets */,
 				D7E00233227969F10022A3B5 /* LaunchScreen.storyboard */,
+				D72470812285118800B715CA /* englishQuotes.json */,
 				D7E00236227969F10022A3B5 /* Info.plist */,
 				D7E0022E227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld */,
 			);
@@ -303,6 +315,7 @@
 				D7E0025D227972F80022A3B5 /* Home.storyboard in Resources */,
 				D7E00235227969F10022A3B5 /* LaunchScreen.storyboard in Resources */,
 				D7E00232227969F10022A3B5 /* Assets.xcassets in Resources */,
+				D72470822285118900B715CA /* englishQuotes.json in Resources */,
 				D7247074227C137E00B715CA /* Favorite.storyboard in Resources */,
 				D7E0025E227972F80022A3B5 /* Main.storyboard in Resources */,
 			);
@@ -329,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D724708022850D7300B715CA /* QuoteData+CoreDataProperties.swift in Sources */,
 				D724707C227C14DA00B715CA /* LoginViewController.swift in Sources */,
 				D7E00269227974DE0022A3B5 /* MainViewController.swift in Sources */,
 				D7E00228227969ED0022A3B5 /* AppDelegate.swift in Sources */,
@@ -341,8 +355,10 @@
 				D724706C227BDB5900B715CA /* Tag+CoreDataProperties.swift in Sources */,
 				D724707A227C13C200B715CA /* FavoriteViewController.swift in Sources */,
 				D7247070227BDB5900B715CA /* Quote+CoreDataProperties.swift in Sources */,
+				D724707F22850D7300B715CA /* QuoteData+CoreDataClass.swift in Sources */,
 				D724706B227BDB5900B715CA /* Tag+CoreDataClass.swift in Sources */,
 				D7E0026B227974F70022A3B5 /* HomeViewController.swift in Sources */,
+				D724708422851FB100B715CA /* FavoriteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
