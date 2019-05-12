@@ -2,7 +2,7 @@
 //  Quote+CoreDataProperties.swift
 //  Motivate Me CP
 //
-//  Created by Kazutaka Homma on 5/2/19.
+//  Created by Kazutaka Homma on 5/12/19.
 //  Copyright © 2019 Kazutaka Homma. All rights reserved.
 //
 //
@@ -17,10 +17,12 @@ extension Quote {
         return NSFetchRequest<Quote>(entityName: "Quote")
     }
 
+    @NSManaged public var favoritedAt: NSDate?
     @NSManaged public var id: Int64
+    @NSManaged public var isFavorited: Bool
     @NSManaged public var text: String?
     @NSManaged public var topic: String?
-    @NSManaged public var isFavorited: Bool
+    @NSManaged public var quoteData: QuoteData?
     @NSManaged public var source: Source?
     @NSManaged public var tags: NSSet?
 
