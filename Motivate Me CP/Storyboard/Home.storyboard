@@ -22,14 +22,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="904"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_icon" id="n3G-6p-far">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                </imageView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuoteListCell" rowHeight="193" id="Wy9-cP-6HO" customClass="QuoteListCell" customModule="Motivate_Me_CP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="193"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="193"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wy9-cP-6HO" id="grH-lW-Pag">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="192.5"/>
@@ -62,74 +57,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bwm-D2-fN1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="8Eo-Fp-GfO"/>
+                    <navigationItem key="navigationItem" title="Home" id="8Eo-Fp-GfO">
+                        <barButtonItem key="rightBarButtonItem" image="list_icon" style="plain" id="A5K-V4-Xgo">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="amj-uS-6hy" customClass="HomeListButton" customModule="Motivate_Me_CP" customModuleProvider="target">
+                                <rect key="frame" x="163" y="0.0" width="231" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="list_icon"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="TableView" destination="iah-h9-VnH" id="BO8-aL-4qs"/>
+                        <outlet property="homeListButton" destination="amj-uS-6hy" id="obo-h7-9JY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJ9-6m-Jat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967" y="848"/>
-        </scene>
-        <!--Favorite-->
-        <scene sceneID="xKF-sE-bm1">
-            <objects>
-                <viewController title="Favorite" id="PNO-ac-JVj" customClass="FavoriteViewController" customModule="Motivate_Me_CP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uKp-ty-UAW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qNn-qK-3GT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="248" id="52O-hb-w1h" customClass="FavoriteCell" customModule="Motivate_Me_CP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="248"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="52O-hb-w1h" id="IS7-fO-b6b" customClass="FavoriteCell" customModule="Motivate_Me_CP" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="247.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="favoriet_more_icon" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-Ao-qcQ">
-                                                    <rect key="frame" x="359" y="11" width="40" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPT-3e-LkW">
-                                                    <rect key="frame" x="30" y="44" width="364" height="122"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnJ-F8-Mwp">
-                                                    <rect key="frame" x="261" y="181" width="133" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="FavoriteAuthorLabel" destination="fnJ-F8-Mwp" id="G7M-t4-8J9"/>
-                                            <outlet property="FavoriteQuoteLabel" destination="RPT-3e-LkW" id="7nO-cw-kaP"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Dty-4S-QBT"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Favorite" id="g8p-kZ-buR"/>
-                    <connections>
-                        <outlet property="FavoriteTableView" destination="qNn-qK-3GT" id="fbb-i3-Dgk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="odf-fz-KOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-59.420289855072468" y="821.65178571428567"/>
+            <point key="canvasLocation" x="-968.11594202898561" y="847.76785714285711"/>
         </scene>
         <!--Home-->
         <scene sceneID="91F-Sf-HaW">
@@ -152,31 +96,8 @@
             </objects>
             <point key="canvasLocation" x="-983" y="157"/>
         </scene>
-        <!--Favorite-->
-        <scene sceneID="UKf-8p-hIi">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NId-KO-zHc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" id="FNr-nK-Hmk"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="URs-G2-1bp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PNO-ac-JVj" kind="relationship" relationship="rootViewController" id="WgV-wW-bzB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cxX-AJ-Pbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-59" y="157"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="favoriet_more_icon" width="135" height="59"/>
         <image name="list_icon" width="177" height="243"/>
     </resources>
 </document>
