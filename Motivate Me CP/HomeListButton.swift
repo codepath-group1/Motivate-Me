@@ -11,11 +11,11 @@ import UIKit
 class HomeListButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
-            if imageView != nil{
-                imageEdgeInsets = UIEdgeInsets(top: 5, left: (bounds.width - 5), bottom: 5, right: 5)
-            }
+        if imageView != nil{
+            imageEdgeInsets = UIEdgeInsets(top: 5, left: (bounds.width - 5), bottom: 5, right: 5)
         }
     }
+}
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
