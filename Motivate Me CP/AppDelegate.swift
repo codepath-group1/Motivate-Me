@@ -17,9 +17,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if !(UserDefaults.standard.bool(forKey: "FirstLaunchDone")) {
+            guard let success = try?loadData() else {
+                return true
+            }
+            if success {
+                UserDefaults.standard.set(true, forKey: "FirstLaunchDone")
+            }
+        }
         return true
     }
 
+    func loadData() throws -> Bool  {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return false
+        }
+        let moc = delegate.persistentContainer.viewContext
+        let decoder = JSONDecoder()
+        guard let contextKey = CodingUserInfoKey.managedObjectContext else {return false}
+        decoder.userInfo[contextKey] = moc
+        guard let path = Bundle.main.path(forResource: "englishQuotes", ofType: "json") else {return false}
+        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        let decoded = try decoder.decode(QuoteData.self, from: data)
+        saveContext()
+        return true
+    }
+
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
