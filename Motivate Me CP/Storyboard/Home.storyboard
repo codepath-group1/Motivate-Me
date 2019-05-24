@@ -58,16 +58,24 @@
                         <viewLayoutGuide key="safeArea" id="bwm-D2-fN1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="8Eo-Fp-GfO">
-                        <barButtonItem key="rightBarButtonItem" image="list_icon" style="plain" id="A5K-V4-Xgo">
-                            <button key="customView" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="amj-uS-6hy" customClass="HomeListButton" customModule="Motivate_Me_CP" customModuleProvider="target">
-                                <rect key="frame" x="163" y="0.0" width="231" height="44"/>
+                        <barButtonItem key="leftBarButtonItem" image="CardButton-1" style="plain" id="LhQ-mA-gvG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nNk-xJ-QIM" customClass="HomeCardButton" customModule="Motivate_Me_CP" customModuleProvider="target">
+                                <rect key="frame" x="20" y="0.0" width="157" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="list_icon"/>
+                                <state key="normal" title="HomeCardButton" image="cardButton"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="HomeListButton" image="list_icon" style="plain" id="A5K-V4-Xgo" customClass="HomeLIstButton">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="amj-uS-6hy" customClass="HomeListButton" customModule="Motivate_Me_CP" customModuleProvider="target">
+                                <rect key="frame" x="213" y="0.0" width="381" height="540"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="list_icon"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="TableView" destination="iah-h9-VnH" id="BO8-aL-4qs"/>
+                        <outlet property="homeCardButton" destination="LhQ-mA-gvG" id="zLk-eB-LKC"/>
                         <outlet property="homeListButton" destination="amj-uS-6hy" id="obo-h7-9JY"/>
                     </connections>
                 </viewController>
@@ -98,6 +106,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list_icon" width="177" height="243"/>
+        <image name="CardButton-1" width="384" height="547"/>
+        <image name="cardButton" width="384" height="547"/>
+        <image name="list_icon" width="381" height="540"/>
     </resources>
 </document>

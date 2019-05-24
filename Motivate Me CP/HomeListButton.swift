@@ -12,7 +12,7 @@ class HomeListButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         if imageView != nil{
-            imageEdgeInsets = UIEdgeInsets(top: 5, left: (bounds.width - 5), bottom: 5, right: 5)
+            imageEdgeInsets = UIEdgeInsets(top: 5, left: (bounds.width - 30), bottom: 5, right: 5)
         }
     }
 }

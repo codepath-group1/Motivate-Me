@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
@@ -15,23 +15,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var homeListButton: UIButton!
     @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var homeCardButton: UIBarButtonItem!
     
-    var quoteArrays: [String] = ["The Way Get Started Is To Quit Talking ANd Begin Doing.", "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.", "Don't Let Yesterday Take Up Too Much Of Today.","You Learn More From Failure Than From Success. Don't Let It Stop You. Failure Builds Character.", "It's Not Whether You Get Knocked Down, It's Whether You Get Up." , "If You Are Working On Something That You Really Care About, You Don't Have To Be Pushed. The Vision Pulls You.", "People Who Are Crazy Enough To Think They Can Change The The World, Are The One Who Do. "]
     
-    var authorArrays: [String] = ["- Walt Disney", "- Winston Churchill", "- Will Rogers", "- Unknown", "- Vince Lombardi", "- Steve Jobs", "- Rob Siltanen" ]
-    var count:Int = 0
+    //var quoteArrays: [String] = ["The Way Get Started Is To Quit Talking ANd Begin Doing.", "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.", "Don't Let Yesterday Take Up Too Much Of Today.","You Learn More From Failure Than From Success. Don't Let It Stop You. Failure Builds Character.", "It's Not Whether You Get Knocked Down, It's Whether You Get Up." , "If You Are Working On Something That You Really Care About, You Don't Have To Be Pushed. The Vision Pulls You.", "People Who Are Crazy Enough To Think They Can Change The The World, Are The One Who Do. "]
+    //var authorArrays: [String] = ["- Walt Disney", "- Winston Churchill", "- Will Rogers", "- Unknown", "- Vince Lombardi", "- Steve Jobs", "- Rob Siltanen" ]
+   // var count:Int = 0
+    var favoriteQuotes : [Quote] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         //updating TableView
         TableView.dataSource = self
         TableView.delegate = self
         self.TableView.reloadData()
-
+        loadFavoriteQuote()
+        //self.navigationItem.title = "Home"
         // Do any additional setup after loading the view.
     }
     //asking for number of row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return quoteArrays.count
+        return 0
     }
     //asking the number of cells in the specific row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

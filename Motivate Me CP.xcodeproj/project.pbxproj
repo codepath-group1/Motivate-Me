@@ -10,6 +10,7 @@
 		385083D62288BDE3008070FB /* HomeListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385083D52288BDE3008070FB /* HomeListButton.swift */; };
 		38B1A67A228158F8001E0F64 /* HomeListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */; };
 		38DF9C4822821D6B00B130B6 /* QuoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */; };
+		38E28F6222978CF400E98C90 /* HomeCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E28F6122978CF400E98C90 /* HomeCardButton.swift */; };
 		D724706B227BDB5900B715CA /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247065227BDB5900B715CA /* Tag+CoreDataClass.swift */; };
 		D724706C227BDB5900B715CA /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247066227BDB5900B715CA /* Tag+CoreDataProperties.swift */; };
 		D724706D227BDB5900B715CA /* Source+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247067227BDB5900B715CA /* Source+CoreDataClass.swift */; };
@@ -59,6 +60,7 @@
 		385083D52288BDE3008070FB /* HomeListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListButton.swift; sourceTree = "<group>"; };
 		38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewViewController.swift; sourceTree = "<group>"; };
 		38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListCell.swift; sourceTree = "<group>"; };
+		38E28F6122978CF400E98C90 /* HomeCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardButton.swift; sourceTree = "<group>"; };
 		D7247065227BDB5900B715CA /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D7247066227BDB5900B715CA /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7247067227BDB5900B715CA /* Source+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Source+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				D72470812285118800B715CA /* englishQuotes.json */,
 				D7E00236227969F10022A3B5 /* Info.plist */,
 				D7E0022E227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld */,
+				38E28F6122978CF400E98C90 /* HomeCardButton.swift */,
 				38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */,
 				38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */,
 				385083D52288BDE3008070FB /* HomeListButton.swift */,
@@ -355,6 +358,7 @@
 				D724707C227C14DA00B715CA /* LoginViewController.swift in Sources */,
 				D7E00269227974DE0022A3B5 /* MainViewController.swift in Sources */,
 				D7E00228227969ED0022A3B5 /* AppDelegate.swift in Sources */,
+				38E28F6222978CF400E98C90 /* HomeCardButton.swift in Sources */,
 				38DF9C4822821D6B00B130B6 /* QuoteListCell.swift in Sources */,
 				38B1A67A228158F8001E0F64 /* HomeListViewViewController.swift in Sources */,
 				D724706E227BDB5900B715CA /* Source+CoreDataProperties.swift in Sources */,

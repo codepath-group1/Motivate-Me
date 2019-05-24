@@ -40,8 +40,6 @@ class FavoriteViewController: UIViewController {
     }
     
 }
-
-
 extension FavoriteViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoritedQuotes.count
