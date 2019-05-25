@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		383A3C632298B287006F77FB /* HomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A3C622298B287006F77FB /* HomeCardViewController.swift */; };
 		385083D62288BDE3008070FB /* HomeListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385083D52288BDE3008070FB /* HomeListButton.swift */; };
 		38B1A67A228158F8001E0F64 /* HomeListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */; };
 		38DF9C4822821D6B00B130B6 /* QuoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		383A3C622298B287006F77FB /* HomeCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCardViewController.swift; path = "Motivate Me CP/Storyboard/HomeCardViewController.swift"; sourceTree = SOURCE_ROOT; };
 		385083D52288BDE3008070FB /* HomeListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListButton.swift; sourceTree = "<group>"; };
 		38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewViewController.swift; sourceTree = "<group>"; };
 		38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListCell.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				D7247079227C13C200B715CA /* FavoriteViewController.swift */,
 				D7E00268227974DE0022A3B5 /* MainViewController.swift */,
 				D7E0026A227974F70022A3B5 /* HomeViewController.swift */,
+				383A3C622298B287006F77FB /* HomeCardViewController.swift */,
 			);
 			name = ViewController;
 			path = "New Group";
@@ -365,6 +368,7 @@
 				D724706D227BDB5900B715CA /* Source+CoreDataClass.swift in Sources */,
 				D7E00230227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld in Sources */,
 				D724706F227BDB5900B715CA /* Quote+CoreDataClass.swift in Sources */,
+				383A3C632298B287006F77FB /* HomeCardViewController.swift in Sources */,
 				D7247078227C13B500B715CA /* ProfileViewController.swift in Sources */,
 				D7247072227BDCD500B715CA /* CodingUserInfoKey+.swift in Sources */,
 				D724706C227BDB5900B715CA /* Tag+CoreDataProperties.swift in Sources */,

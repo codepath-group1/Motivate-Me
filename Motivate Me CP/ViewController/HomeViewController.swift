@@ -22,6 +22,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var authorArrays: [String] = ["- Walt Disney", "- Winston Churchill", "- Will Rogers", "- Unknown", "- Vince Lombardi", "- Steve Jobs", "- Rob Siltanen" ]
    var count:Int = 0
     var favoriteQuotes : [Quote] = []
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //updating TableView
@@ -31,6 +35,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //loadFavoriteQuote()
         //self.navigationItem.title = "Home"
         // Do any additional setup after loading the view.
+    }
+    
+   
+    
+    @IBAction func HomeCardButClicked(_ sender: Any) {
+        print("HomeCardButPressed")
+        self.performSegue(withIdentifier:"HomeCardViewSegue", sender: self)
+        
+    }
+    @IBAction func HomeListButClicked(_ sender: Any) {
+        print("HomeListButPressed")
     }
     //asking for number of row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
