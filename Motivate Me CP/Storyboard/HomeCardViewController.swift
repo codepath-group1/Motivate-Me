@@ -11,6 +11,18 @@ import CoreData
 
 class HomeCardViewController: UIViewController {
 
+    
+    @IBOutlet weak var QuoteLabel: UILabel!
+    @IBOutlet weak var AuthorLabel: UILabel!
+    
+    @IBOutlet weak var SwipeCard: UIView!
+  
+    var homeCardQuotes : [Quote] = []
+   
+    var quoteArrays: [String] = ["The Way Get Started Is To Quit Talking ANd Begin Doing.", "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.", "Don't Let Yesterday Take Up Too Much Of Today.","You Learn More From Failure Than From Success. Don't Let It Stop You. Failure Builds Character.", "It's Not Whether You Get Knocked Down, It's Whether You Get Up." , "If You Are Working On Something That You Really Care About, You Don't Have To Be Pushed. The Vision Pulls You.", "People Who Are Crazy Enough To Think They Can Change The The World, Are The One Who Do. "]
+    var authorArrays: [String] = ["- Walt Disney", "- Winston Churchill", "- Will Rogers", "- Unknown", "- Vince Lombardi", "- Steve Jobs", "- Rob Siltanen" ]
+    var count:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +34,33 @@ class HomeCardViewController: UIViewController {
         print("HomeListButtonClicked")
     }
     
+    @IBAction func swipeGesture(_ sender: UIPanGestureRecognizer) {
+        
+        
+        let SwipeCard = sender.view!
+        let translationPoint = sender.translation(in: view)
+        SwipeCard.center = CGPoint(x: view.center.x+translationPoint.x, y: view.center.y+translationPoint.y)
+        
+        
+        if sender.state == UIGestureRecognizer.State.ended {
+            if SwipeCard.center.x < 20 { // Moved to left
+                UIView.animate(withDuration: 0.3, animations: {
+                    SwipeCard.center = CGPoint(x: SwipeCard.center.x-200, y: SwipeCard.center.y)
+                })
+                return
+            }
+            else if (SwipeCard.center.x > (view.frame.size.width-20)) { // Moved to right
+                UIView.animate(withDuration: 0.3, animations: {
+                    SwipeCard.center = CGPoint(x: SwipeCard.center.x+200, y: SwipeCard.center.y)
+                })
+                return
+            }
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                SwipeCard.center = self.view.center
+            })
+        }
+    }
     /*
     // MARK: - Navigation
 
