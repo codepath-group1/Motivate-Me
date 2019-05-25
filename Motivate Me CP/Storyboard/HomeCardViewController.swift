@@ -11,58 +11,115 @@ import CoreData
 
 class HomeCardViewController: UIViewController {
 
-    
-    @IBOutlet weak var QuoteLabel: UILabel!
-    @IBOutlet weak var AuthorLabel: UILabel!
+    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
     @IBOutlet weak var likeImage: UIImageView!
     @IBOutlet weak var dislikeImage: UIImageView!
-    @IBOutlet weak var SwipeCard: UIView!
+    @IBOutlet weak var swipeCard: UIView!
     
     var homeCardQuotes : [Quote] = []
-   
-    var quoteArrays: [String] = ["The Way Get Started Is To Quit Talking ANd Begin Doing.", "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.", "Don't Let Yesterday Take Up Too Much Of Today.","You Learn More From Failure Than From Success. Don't Let It Stop You. Failure Builds Character.", "It's Not Whether You Get Knocked Down, It's Whether You Get Up." , "If You Are Working On Something That You Really Care About, You Don't Have To Be Pushed. The Vision Pulls You.", "People Who Are Crazy Enough To Think They Can Change The The World, Are The One Who Do. "]
-    var authorArrays: [String] = ["- Walt Disney", "- Winston Churchill", "- Will Rogers", "- Unknown", "- Vince Lombardi", "- Steve Jobs", "- Rob Siltanen" ]
-    var count:Int = 0
-    
+    var cardFrame : CGRect? = nil
+    var quotes : [Quote] = []
+    var quoteIndex:Int = 0
+    var swipedRight : Bool? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         dislikeImage.alpha = 0
         likeImage.alpha = 0
-        // Do any additional setup after loading the view.
+        loadQuotes()
+        updateUIWith(quotes[quoteIndex])
     }
     
-    @IBAction func HomeCardButtonClicked(_ sender: Any) {
-        self.performSegue(withIdentifier: "HomeListViewSegue", sender: self)
-        print("HomeListButtonClicked")
+    override func viewWillAppear(_ animated: Bool) {
+        var quoteToShow = quotes[quoteIndex]
+        let id = UserDefaults.standard.integer(forKey: "quoteId")
+        if id > 0 {
+            for quote in quotes {
+                if quote.id == id {
+                    quoteToShow = quote
+                    break
+                }
+            }
+        }
+        updateUIWith(quoteToShow)
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let _ = cardFrame else {
+            cardFrame = swipeCard.frame
+            return
+        }
+    }
+    
+    func loadQuotes() {
+        let fetchRequest: NSFetchRequest<QuoteData> = QuoteData.fetchRequest()
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let moc = delegate.persistentContainer.viewContext
+        
+        do {
+            let quoteDatas = try moc.fetch(fetchRequest)
+            // TODO: extract only favorited quotes
+            if let results = quoteDatas[0].results as? Set<Quote> {
+                quotes = Array(results)
+            }
+        } catch {
+            fatalError("There was an error fetching the list of favorited quotes!")
+        }
+    }
+    
+    func updateUIWith(_ quote : Quote) {
+        quoteLabel.text = quote.text
+        authorLabel.text = quote.source?.title
+    }
+    
+    @IBAction func listButtonTapped(_ sender: Any) {
+        if let navController = self.navigationController {
+            let newVC = (storyboard?.instantiateViewController(withIdentifier: "HomeViewController"))!
+            
+            var stack = navController.viewControllers
+            stack.remove(at: stack.count - 1)       // remove current VC
+            stack.insert(newVC, at: stack.count) // add the new one
+            navController.setViewControllers(stack, animated: true) // boom!
+        }
     }
     
     @IBAction func swipeGesture(_ sender: UIPanGestureRecognizer) {
         
-        
-        let SwipeCard = sender.view!
+        let swipeCard = sender.view!
         let translationPoint = sender.translation(in: view)
-        SwipeCard.center = CGPoint(x: view.center.x+translationPoint.x, y: view.center.y+translationPoint.y)
+        swipeCard.center = CGPoint(x: view.center.x+translationPoint.x, y: view.center.y+translationPoint.y)
         if sender.state == UIGestureRecognizer.State.ended {
-            if SwipeCard.center.x < 20 { // Moved to left
+            if swipeCard.center.x < 20 { // Moved to left
                 UIView.animate(withDuration: 0.3, animations: {
-                    SwipeCard.center = CGPoint(x: SwipeCard.center.x-300, y: SwipeCard.center.y)
-                })
+                    swipeCard.center = CGPoint(x: swipeCard.center.x-300, y: swipeCard.center.y)
+                }) { (_) in
+                    self.genNewCard()
+                }
+                swipedRight = false
                 return
             }
-            else if (SwipeCard.center.x > (view.frame.size.width-20)) { // Moved to right
+            else if (swipeCard.center.x > (view.frame.size.width-20)) { // Moved to right
                 UIView.animate(withDuration: 0.3, animations: {
-                    SwipeCard.center = CGPoint(x: SwipeCard.center.x+300, y: SwipeCard.center.y)
-                })
+                    swipeCard.center = CGPoint(x: swipeCard.center.x+300, y: swipeCard.center.y)
+                }) { (_) in
+                    self.genNewCard()
+                }
+                quotes[quoteIndex].isFavorited = true
+                (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                swipedRight = true
                 return
             }
             UIView.animate(withDuration: 0.2, animations: {
-                SwipeCard.center = self.view.center
+                swipeCard.transform = .identity
+                swipeCard.frame = self.cardFrame!
                 self.likeImage.alpha = 0
                 self.dislikeImage.alpha = 0
             })
         }
-        let distanceMoved = SwipeCard.center.x - view.center.x
+        let distanceMoved = swipeCard.center.x - view.center.x
         if distanceMoved > 0 { // moved right side
             likeImage.alpha = abs(distanceMoved)/view.center.x
             dislikeImage.alpha = 0
@@ -71,28 +128,51 @@ class HomeCardViewController: UIViewController {
             dislikeImage.alpha = abs(distanceMoved)/view.center.x
             likeImage.alpha = 0
         }
-        SwipeCard.transform = CGAffineTransform(rotationAngle: 0.61)
-        print(self.view.frame.size)
+        swipeCard.transform = CGAffineTransform(rotationAngle: 0.61)
         let divisionParam = 448 / 0.61
-        //let distanceMoved = SwipeCard.center.x - view.center.x
-        SwipeCard.transform = CGAffineTransform(rotationAngle: distanceMoved/CGFloat(divisionParam))
-        //SwipeCard.transform = .identity
+        swipeCard.transform = CGAffineTransform(rotationAngle: distanceMoved/CGFloat(divisionParam))
+        
+    }
+    
+    func genNewCard() {
+        swipeCard.transform = .identity
+        swipeCard.frame = cardFrame!
+        swipeCard.alpha = 0
+        dislikeImage.alpha = 0
+        likeImage.alpha = 0
+        quoteIndex += 1
+        if quoteIndex >= quotes.count { quoteIndex = 0 }
+        updateUIWith(quotes[quoteIndex])
+        swipeCard.layoutIfNeeded()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.swipeCard.alpha = 1
+            
+        })
     }
     
     @IBAction func undoButton(_ sender: Any) {
-        SwipeCard.center = self.view.center
+        guard let swipedRight = swipedRight,
+              quoteIndex > 0 else {
+            return 
+        }
         self.dislikeImage.alpha = 0
         self.likeImage.alpha = 0
-        SwipeCard.transform = .identity
+        swipeCard.transform = .identity
+        
+        quoteIndex -= 1
+        updateUIWith(quotes[quoteIndex])
+        if swipedRight {
+            swipeCard.center = CGPoint(x: swipeCard.center.x+300, y: swipeCard.center.y)
+            quotes[quoteIndex].isFavorited = false
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        } else {
+            swipeCard.center = CGPoint(x: swipeCard.center.x-300, y: swipeCard.center.y)
+        }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.swipeCard.frame = self.cardFrame!
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+

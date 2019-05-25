@@ -104,7 +104,7 @@ class ProfileViewController: UIViewController {
                 content.title = (quote.source?.title!) ?? "No Name"
                 content.body = quote.text!
                 content.sound = UNNotificationSound.default
-                
+                content.userInfo = ["quoteId":quote.id]
                 let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: date)
                 print(triggerDate)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
@@ -161,7 +161,7 @@ extension ProfileViewController : UITableViewDelegate {
         if editingStyle == .delete {
             notifications.remove(at: indexPath.row)
             UserDefaults.standard.set(notifications, forKey: "notifications")
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            UserDefaults.standard.synchronize()
             tableView.deleteRows(at: [indexPath], with: .fade)
             scheduleNotification()
         }
@@ -176,7 +176,7 @@ extension ProfileViewController : AddNotificationViewControllerDelegate {
             notifications.append(notification)
         }
         UserDefaults.standard.set(notifications, forKey: "notifications")
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        UserDefaults.standard.synchronize()
         tableView.reloadData()
         scheduleNotification()
     }

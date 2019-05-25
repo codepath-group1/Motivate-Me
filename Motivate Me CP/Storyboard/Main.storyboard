@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tju-cx-sRu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tju-cx-sRu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
         <scene sceneID="Dmo-yb-BLe">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="EXE-t7-HUX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hRG-R7-DxI"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="albums" id="hRG-R7-DxI"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LX-i0-5Zb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -24,7 +24,7 @@
         <scene sceneID="2zI-Io-r3T">
             <objects>
                 <viewControllerPlaceholder storyboardName="Favorite" id="spG-HK-e7X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lTn-oN-Bi3"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="heart" id="lTn-oN-Bi3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggo-sn-S9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,11 +72,16 @@
         <scene sceneID="xOz-FD-7Am">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="1pa-le-bsi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sny-Vd-YZC"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="alarm_clock" id="sny-Vd-YZC"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnO-2a-o4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="696" y="248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarm_clock" width="30" height="30"/>
+        <image name="albums" width="30" height="30"/>
+        <image name="heart" width="30" height="30"/>
+    </resources>
 </document>
