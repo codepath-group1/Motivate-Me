@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dateFormatter.dateFormat = "HH:mm"
             let time = dateFormatter.date(from: "08:00")
             let notification : Notification = ["time": time,
-                                               "repeat": [true,true,true,true,true,true,true,],
+                                               "repeat": [true,true,true,true,true,true,true],
                                                "quoteList": "Random"]
             UserDefaults.standard.set([notification], forKey: "notifications")
             guard let success = try?loadData() else {
