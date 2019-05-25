@@ -124,6 +124,9 @@
                                 <rect key="frame" x="154" y="791" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset_ Button"/>
+                                <connections>
+                                    <action selector="undoButton:" destination="EwG-RR-nFo" eventType="touchUpInside" id="mNV-GF-eAd"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LA2-Qi-cqc" userLabel="Card">
                                 <rect key="frame" x="26" y="187" width="362" height="522"/>

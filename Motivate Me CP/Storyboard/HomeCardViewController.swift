@@ -78,6 +78,13 @@ class HomeCardViewController: UIViewController {
         SwipeCard.transform = CGAffineTransform(rotationAngle: distanceMoved/CGFloat(divisionParam))
         //SwipeCard.transform = .identity
     }
+    
+    @IBAction func undoButton(_ sender: Any) {
+        SwipeCard.center = self.view.center
+        self.dislikeImage.alpha = 0
+        self.likeImage.alpha = 0
+        SwipeCard.transform = .identity
+    }
     /*
     // MARK: - Navigation
 
