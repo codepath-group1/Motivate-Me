@@ -15,6 +15,8 @@ class HomeCardViewController: UIViewController {
     @IBOutlet weak var QuoteLabel: UILabel!
     @IBOutlet weak var AuthorLabel: UILabel!
     
+    @IBOutlet weak var likeImage: UIImageView!
+    @IBOutlet weak var dislikeImage: UIImageView!
     @IBOutlet weak var SwipeCard: UIView!
   
     var homeCardQuotes : [Quote] = []
@@ -40,8 +42,6 @@ class HomeCardViewController: UIViewController {
         let SwipeCard = sender.view!
         let translationPoint = sender.translation(in: view)
         SwipeCard.center = CGPoint(x: view.center.x+translationPoint.x, y: view.center.y+translationPoint.y)
-        
-        
         if sender.state == UIGestureRecognizer.State.ended {
             if SwipeCard.center.x < 20 { // Moved to left
                 UIView.animate(withDuration: 0.3, animations: {
@@ -55,10 +55,18 @@ class HomeCardViewController: UIViewController {
                 })
                 return
             }
-            
             UIView.animate(withDuration: 0.2, animations: {
                 SwipeCard.center = self.view.center
             })
+        }
+        let distanceMoved = SwipeCard.center.x - view.center.x
+        if distanceMoved > 0 { // moved right side
+            likeImage.alpha = abs(distanceMoved)/view.center.x
+            dislikeImage.alpha = 0
+        }
+        else { // moved left side
+            dislikeImage.alpha = abs(distanceMoved)/view.center.x
+            likeImage.alpha = 0
         }
     }
     /*

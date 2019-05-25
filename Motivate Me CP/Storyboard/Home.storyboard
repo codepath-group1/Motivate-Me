@@ -114,14 +114,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello!!! how are you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEU-3u-Jqg">
-                                <rect key="frame" x="125" y="681" width="153" height="21"/>
+                                <rect key="frame" x="125" y="762" width="153" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3S-vP-giW">
+                                <rect key="frame" x="154" y="791" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset_ Button"/>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LA2-Qi-cqc" userLabel="Card">
-                                <rect key="frame" x="20" y="116" width="362" height="522"/>
+                                <rect key="frame" x="26" y="187" width="362" height="522"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QuoteLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kN-cw-wqw">
@@ -131,13 +136,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LikeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QHa-Mh-1cU" userLabel="LIkeImage">
+                                        <rect key="frame" x="16" y="117" width="330" height="288"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AuthorLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQh-zp-kAJ">
-                                        <rect key="frame" x="95" y="467" width="234" height="29"/>
+                                        <rect key="frame" x="104" y="462" width="234" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DislikeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-Bv-qVX" userLabel="DislikeImage">
+                                        <rect key="frame" x="18" y="119" width="326" height="284"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -145,11 +158,6 @@
                                     <outletCollection property="gestureRecognizers" destination="sto-4K-gsp" appends="YES" id="ivh-XB-JtU"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3S-vP-giW">
-                                <rect key="frame" x="154" y="751" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset_ Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="b8z-V7-N4l"/>
@@ -174,6 +182,8 @@
                         <outlet property="AuthorLabel" destination="VQh-zp-kAJ" id="b34-rZ-47F"/>
                         <outlet property="QuoteLabel" destination="6kN-cw-wqw" id="DpE-JV-T2H"/>
                         <outlet property="SwipeCard" destination="LA2-Qi-cqc" id="3vH-9n-DJQ"/>
+                        <outlet property="dislikeImage" destination="Lyd-Bv-qVX" id="zoA-7N-pcc"/>
+                        <outlet property="likeImage" destination="QHa-Mh-1cU" id="v6c-29-JQB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1w-jW-i34" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,6 +237,8 @@
     </scenes>
     <resources>
         <image name="CardButton-1" width="384" height="547"/>
+        <image name="DislikeIcon" width="512" height="512"/>
+        <image name="LikeIcon" width="2000" height="2000"/>
         <image name="cardButton" width="384" height="547"/>
         <image name="list_icon" width="381" height="540"/>
     </resources>
