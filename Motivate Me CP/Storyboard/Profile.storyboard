@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GFp-gA-4Lf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GFp-gA-4Lf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="9bp-Vi-acR">
@@ -78,18 +78,19 @@
                     <navigationItem key="navigationItem" title="Notification" id="6Jw-bQ-0lX">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tn8-Ut-yjr">
                             <connections>
-                                <segue destination="piW-4J-nNp" kind="presentation" id="3Yw-g4-erF"/>
+                                <action selector="addButtonPressed:" destination="MfD-ju-03h" id="4dh-Mb-1k5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="GFp-gA-4Lf" id="0hD-0p-88k"/>
                         <segue destination="piW-4J-nNp" kind="presentation" identifier="NotificationCellSegue" id="Bqk-Dt-0Sg"/>
+                        <segue destination="piW-4J-nNp" kind="presentation" identifier="NewNotificationSegue" id="Nfj-NT-aTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uyo-YO-202" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="157"/>
+            <point key="canvasLocation" x="722" y="-11"/>
         </scene>
         <!--Notification-->
         <scene sceneID="xkI-kh-lCb">
@@ -513,6 +514,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bqk-Dt-0Sg"/>
+        <segue reference="Nfj-NT-aTD"/>
     </inferredMetricsTieBreakers>
 </document>
