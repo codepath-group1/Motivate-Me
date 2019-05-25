@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if !(UserDefaults.standard.bool(forKey: "FirstLaunchDone")) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let time = dateFormatter.date(from: "08:00")
+            let notification : Notification = ["time": time,
+                                               "repeat": [true,true,true,true,true,true,true,],
+                                               "quoteList": "Random"]
+            UserDefaults.standard.set([notification], forKey: "notifications")
             guard let success = try?loadData() else {
                 return true
             }

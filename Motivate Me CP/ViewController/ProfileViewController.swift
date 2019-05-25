@@ -8,23 +8,38 @@
 
 import UIKit
 
+typealias Repeat = [Bool]
+typealias QuoteList = String
+typealias Notification = [String: Any]
+
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    var notifications: [Notification] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loadNotifications()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadNotifications() {
+        let ary = UserDefaults.standard.array(forKey: "notifications") ?? []
+        for i in 0 ..< ary.count {
+            if let notification = ary[i] as? Notification {
+                notifications.append(notification)
+            }
+        }
     }
-    */
+}
 
+extension ProfileViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notifications.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as? NotificationCell else {
+            fatalError("Cell Casting failed")
+        }
+        cell.notification = notifications[indexPath.row]
+        return cell
+    }
 }
