@@ -8,64 +8,64 @@
 
 import UIKit
 import CoreData
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    
+
+class HomeViewController: UIViewController {
     
     
     @IBOutlet weak var homeListButton: UIButton!
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var homeCardButton: UIBarButtonItem!
     
-    
-    //var quoteArrays: [String] = ["The Way Get Started Is To Quit Talking ANd Begin Doing.", "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.", "Don't Let Yesterday Take Up Too Much Of Today.","You Learn More From Failure Than From Success. Don't Let It Stop You. Failure Builds Character.", "It's Not Whether You Get Knocked Down, It's Whether You Get Up." , "If You Are Working On Something That You Really Care About, You Don't Have To Be Pushed. The Vision Pulls You.", "People Who Are Crazy Enough To Think They Can Change The The World, Are The One Who Do. "]
-    //var authorArrays: [String] = ["- Walt Disney", "- Winston Churchill", "- Will Rogers", "- Unknown", "- Vince Lombardi", "- Steve Jobs", "- Rob Siltanen" ]
-   // var count:Int = 0
-    var favoriteQuotes : [Quote] = []
+    var quotes : [Quote] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        //updating TableView
+        
+        //updating TableView (testing code)
         TableView.dataSource = self
-        TableView.delegate = self
+        loadQuotes()
         self.TableView.reloadData()
-        loadFavoriteQuote()
-        //self.navigationItem.title = "Home"
-        // Do any additional setup after loading the view.
-    }
-    //asking for number of row
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    //asking the number of cells in the specific row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QuoteListCell") as! QuoteListCell
-        if count < (quoteArrays.count - 1) {
-              count += 1
-        }
-        cell.quoteLabel.text = quoteArrays[count]
-        cell.authorLabel.text = authorArrays[count]
         
-        
-        //tutorial
-        //movies is an array dictionary
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
-        //let movie = movies[indexPath.row]
-        //let title = movie["title"] as! String
-        //let synopsis = movie["overview"] as! String
-        //cell.titleLabel!.text = title
-        //cell.synopsisLabel.text = synopsis
-        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadQuotes() {
+        let fetchRequest: NSFetchRequest<QuoteData> = QuoteData.fetchRequest()
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let moc = delegate.persistentContainer.viewContext
+        
+        do {
+            let quoteDatas = try moc.fetch(fetchRequest)
+            // TODO: extract only favorited quotes
+            if let results = quoteDatas[0].results as? Set<Quote> {
+                quotes = Array(results)
+            }
+        } catch {
+            fatalError("There was an error fetching the list of favorited quotes!")
+        }
     }
-    */
+    
+    @IBAction func cardButtonTapped(_ sender: Any) {
+        if let navController = self.navigationController {
+            let newVC = (storyboard?.instantiateViewController(withIdentifier: "HomeCardViewController"))!
+            var stack = navController.viewControllers
+            stack.remove(at: stack.count - 1)       // remove current VC
+            stack.insert(newVC, at: stack.count) // add the new one
+            navController.setViewControllers(stack, animated: true) // boom!
+        }
+    }
+}
 
+extension HomeViewController : UITableViewDataSource {
+    //asking for number of row
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return quotes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuoteListCell") as! QuoteListCell
+        cell.quoteLabel.text = quotes[indexPath.row].text
+        cell.authorLabel.text = quotes[indexPath.row].source?.title ?? "No Name"
+        return cell
+    }
 }

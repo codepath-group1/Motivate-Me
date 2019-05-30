@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		383A3C632298B287006F77FB /* HomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A3C622298B287006F77FB /* HomeCardViewController.swift */; };
 		385083D62288BDE3008070FB /* HomeListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385083D52288BDE3008070FB /* HomeListButton.swift */; };
 		38B1A67A228158F8001E0F64 /* HomeListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */; };
 		38DF9C4822821D6B00B130B6 /* QuoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */; };
-		38E28F6222978CF400E98C90 /* HomeCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E28F6122978CF400E98C90 /* HomeCardButton.swift */; };
+		D72396F52298AE450027672F /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72396F42298AE450027672F /* NotificationCell.swift */; };
+		D72396F72298B12A0027672F /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72396F62298B12A0027672F /* Formatter.swift */; };
+		D72396F92298C6790027672F /* AddNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72396F82298C6790027672F /* AddNotificationViewController.swift */; };
+		D72396FB2298C88F0027672F /* NotificationPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72396FA2298C88F0027672F /* NotificationPropertyCell.swift */; };
+		D72396FD2298D9F90027672F /* DayOfWeekPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72396FC2298D9F90027672F /* DayOfWeekPickerViewController.swift */; };
+		D72396FF2298DDB90027672F /* QuoteListPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72396FE2298DDB80027672F /* QuoteListPickerViewController.swift */; };
 		D724706B227BDB5900B715CA /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247065227BDB5900B715CA /* Tag+CoreDataClass.swift */; };
 		D724706C227BDB5900B715CA /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247066227BDB5900B715CA /* Tag+CoreDataProperties.swift */; };
 		D724706D227BDB5900B715CA /* Source+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7247067227BDB5900B715CA /* Source+CoreDataClass.swift */; };
@@ -57,10 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		383A3C622298B287006F77FB /* HomeCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeCardViewController.swift; path = "Motivate Me CP/Storyboard/HomeCardViewController.swift"; sourceTree = SOURCE_ROOT; };
 		385083D52288BDE3008070FB /* HomeListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListButton.swift; sourceTree = "<group>"; };
 		38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewViewController.swift; sourceTree = "<group>"; };
 		38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListCell.swift; sourceTree = "<group>"; };
-		38E28F6122978CF400E98C90 /* HomeCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardButton.swift; sourceTree = "<group>"; };
+		D72396F42298AE450027672F /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		D72396F62298B12A0027672F /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		D72396F82298C6790027672F /* AddNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddNotificationViewController.swift; path = "Motivate Me CP/ViewController/AddNotificationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		D72396FA2298C88F0027672F /* NotificationPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPropertyCell.swift; sourceTree = "<group>"; };
+		D72396FC2298D9F90027672F /* DayOfWeekPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DayOfWeekPickerViewController.swift; path = "Motivate Me CP/ViewController/DayOfWeekPickerViewController.swift"; sourceTree = SOURCE_ROOT; };
+		D72396FE2298DDB80027672F /* QuoteListPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteListPickerViewController.swift; path = "Motivate Me CP/ViewController/QuoteListPickerViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D7247065227BDB5900B715CA /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D7247066227BDB5900B715CA /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7247067227BDB5900B715CA /* Source+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Source+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -120,6 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D72396F32298AE190027672F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D72396FA2298C88F0027672F /* NotificationPropertyCell.swift */,
+				38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */,
+				D72396F42298AE450027672F /* NotificationCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D7247062227BCA7A00B715CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +180,7 @@
 		D7E00226227969ED0022A3B5 /* Motivate Me CP */ = {
 			isa = PBXGroup;
 			children = (
+				D72396F62298B12A0027672F /* Formatter.swift */,
 				D724708322851FB000B715CA /* FavoriteCell.swift */,
 				D7247071227BDCD500B715CA /* CodingUserInfoKey+.swift */,
 				D7247062227BCA7A00B715CA /* Model */,
@@ -169,9 +192,8 @@
 				D72470812285118800B715CA /* englishQuotes.json */,
 				D7E00236227969F10022A3B5 /* Info.plist */,
 				D7E0022E227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld */,
-				38E28F6122978CF400E98C90 /* HomeCardButton.swift */,
 				38B1A679228158F8001E0F64 /* HomeListViewViewController.swift */,
-				38DF9C4722821D6B00B130B6 /* QuoteListCell.swift */,
+				D72396F32298AE190027672F /* View */,
 				385083D52288BDE3008070FB /* HomeListButton.swift */,
 			);
 			path = "Motivate Me CP";
@@ -209,11 +231,15 @@
 		D7E00261227973910022A3B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D72396FE2298DDB80027672F /* QuoteListPickerViewController.swift */,
+				D72396FC2298D9F90027672F /* DayOfWeekPickerViewController.swift */,
+				D72396F82298C6790027672F /* AddNotificationViewController.swift */,
 				D724707B227C14DA00B715CA /* LoginViewController.swift */,
 				D7247077227C13B500B715CA /* ProfileViewController.swift */,
 				D7247079227C13C200B715CA /* FavoriteViewController.swift */,
 				D7E00268227974DE0022A3B5 /* MainViewController.swift */,
 				D7E0026A227974F70022A3B5 /* HomeViewController.swift */,
+				383A3C622298B287006F77FB /* HomeCardViewController.swift */,
 			);
 			name = ViewController;
 			path = "New Group";
@@ -358,19 +384,25 @@
 				D724707C227C14DA00B715CA /* LoginViewController.swift in Sources */,
 				D7E00269227974DE0022A3B5 /* MainViewController.swift in Sources */,
 				D7E00228227969ED0022A3B5 /* AppDelegate.swift in Sources */,
-				38E28F6222978CF400E98C90 /* HomeCardButton.swift in Sources */,
 				38DF9C4822821D6B00B130B6 /* QuoteListCell.swift in Sources */,
 				38B1A67A228158F8001E0F64 /* HomeListViewViewController.swift in Sources */,
+				D72396FD2298D9F90027672F /* DayOfWeekPickerViewController.swift in Sources */,
 				D724706E227BDB5900B715CA /* Source+CoreDataProperties.swift in Sources */,
 				D724706D227BDB5900B715CA /* Source+CoreDataClass.swift in Sources */,
 				D7E00230227969EE0022A3B5 /* Motivate_Me_CP.xcdatamodeld in Sources */,
 				D724706F227BDB5900B715CA /* Quote+CoreDataClass.swift in Sources */,
+				383A3C632298B287006F77FB /* HomeCardViewController.swift in Sources */,
 				D7247078227C13B500B715CA /* ProfileViewController.swift in Sources */,
 				D7247072227BDCD500B715CA /* CodingUserInfoKey+.swift in Sources */,
+				D72396FF2298DDB90027672F /* QuoteListPickerViewController.swift in Sources */,
 				D724706C227BDB5900B715CA /* Tag+CoreDataProperties.swift in Sources */,
+				D72396FB2298C88F0027672F /* NotificationPropertyCell.swift in Sources */,
+				D72396F52298AE450027672F /* NotificationCell.swift in Sources */,
+				D72396F72298B12A0027672F /* Formatter.swift in Sources */,
 				D724707A227C13C200B715CA /* FavoriteViewController.swift in Sources */,
 				385083D62288BDE3008070FB /* HomeListButton.swift in Sources */,
 				D7247070227BDB5900B715CA /* Quote+CoreDataProperties.swift in Sources */,
+				D72396F92298C6790027672F /* AddNotificationViewController.swift in Sources */,
 				D724707F22850D7300B715CA /* QuoteData+CoreDataClass.swift in Sources */,
 				D724706B227BDB5900B715CA /* Tag+CoreDataClass.swift in Sources */,
 				D7E0026B227974F70022A3B5 /* HomeViewController.swift in Sources */,
@@ -542,7 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BVC387KTSQ;
 				INFOPLIST_FILE = "Motivate Me CP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,7 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BVC387KTSQ;
 				INFOPLIST_FILE = "Motivate Me CP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
