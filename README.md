@@ -1,5 +1,7 @@
 # MotivateMe
 
+<img src='https://github.com/codepath-group1/Motivate-Me/blob/master/ezgif-1-eb53462793df.gif?raw=true' >
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
