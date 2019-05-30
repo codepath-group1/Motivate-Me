@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,13 +19,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if !(UserDefaults.standard.bool(forKey: "FirstLaunchDone")) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let time = dateFormatter.date(from: "08:00")
+            let notification : Notification = ["time": time as Any,
+                                               "repeat": [true,true,true,true,true,true,true],
+                                               "quoteList": "Random"]
+            UserDefaults.standard.set([notification], forKey: "notifications")
+            UserDefaults.standard.synchronize()
+
             guard let success = try?loadData() else {
                 return true
             }
             if success {
                 UserDefaults.standard.set(true, forKey: "FirstLaunchDone")
+                UserDefaults.standard.synchronize()
             }
         }
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        UserDefaults.standard.set(-1, forKey: "quoteId")
+        UserDefaults.standard.synchronize()
+  
         return true
     }
 
@@ -115,3 +131,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if let quoteId = response.notification.request.content.userInfo["quoteId"] as? Int,
+            let tab = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController {
+            UserDefaults.standard.set(quoteId, forKey: "quoteId")
+            UserDefaults.standard.synchronize()
+            tab.selectedIndex = 0
+        }
+    }
+}

@@ -16,9 +16,11 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         loadFavoritedQuote()
+        tableView.reloadData()
     }
     
     func loadFavoritedQuote() {
@@ -32,7 +34,13 @@ class FavoriteViewController: UIViewController {
             let quoteDatas = try moc.fetch(fetchRequest)
             // TODO: extract only favorited quotes
             if let results = quoteDatas[0].results as? Set<Quote> {
-                favoritedQuotes = Array(results)
+                favoritedQuotes = []
+                for quote in results {
+                    if quote.isFavorited {
+                        favoritedQuotes.append(quote)
+                    }
+                }
+                
             }
         } catch {
             fatalError("There was an error fetching the list of favorited quotes!")
